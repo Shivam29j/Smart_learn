@@ -1,0 +1,13 @@
+.cards{
+  --tw-bg-opacity: 1;
+  display:flex;
+  flex-wrap : wrap;
+  justify-content: space-around;
+}
+.subject{
+  text-align: center;
+  font-weight: 700;
+  font-size: large;
+  -webkit-text-stroke: 1px black;
+  color: white;
+}

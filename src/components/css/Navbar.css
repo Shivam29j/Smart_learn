@@ -1,0 +1,36 @@
+.nav{
+    background: transparent;
+}
+.navbar {
+    background-color: var(pink);
+}
+.navbar-brand{
+    -webkit-text-stroke: 0.5px black;
+    color: white;
+    font-weight: 700;
+    font-size: 250% !important;   
+}
+.navbar a {
+    font-size: 1.5rem;    
+}
+.navbar li {
+    margin-left: 2rem;
+}
+
+.dropdown-item:hover{
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+    border-radius: 20px;
+
+}
+
+
+.custom-dropdown-item.active {
+    background-color:#ce5b09;
+    border-radius: 20px;
+  }
+
+.dropdown-menu{
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+    border: 0px;
+    border-radius:20px;
+}

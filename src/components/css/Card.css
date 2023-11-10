@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #ffaf00, #bb02ff);
+  background-attachment: fixed;
+}
+/* Flip Card Container */
+.flip-card {    
+  display: flex;
+  direction: column;
+  margin: 1.5rem;
+  perspective: 1000px; /* Defines the distance between the user and the z=0 plane */
+  cursor: pointer;
+}
+/* Flip Card Inner Container */
+.flip-card-inner {  
+  position: relative;
+  width: 20rem;
+  height: 25rem; 
+  padding-bottom: 75%;
+  text-align: center;
+   /* Maintain a 4:3 aspect ratio for the card */
+  
+  transform-style: preserve-3d; /* Preserve 3D transformation for child elements */
+  transition: transform 0.8s; /* Apply smooth transition when flipping */
+  transition: all ease 0.8s;
+}
+
+/* Front Side of the Card */
+.flip-card-front,
+.flip-card-back {
+  background: #fff;
+  filter: drop-shadow(10px 10px 5px black);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; /* Hide the backside of the element */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #1a1a1a;
+  border-radius: 20px; 
+  overflow-y: auto;
+  text-overflow: clip;
+  margin: 20px;
+}
+
+/* Back Side of the Card (initially hidden) */
+.flip-card-back {
+  transform: rotateY(180deg); 
+}
+
+/* Applied when the card is flipped */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .flip-card {
+    max-width: 100%;
+  }
+
+  /* Adjust font size for smaller screens */
+  .flip-card-front h2,
+  .flip-card-back h2 {
+    font-size: 16px;
+  } 
+}
+.head{
+  text-align: center;
+  color: black;
+  -webkit-text-stroke: 2px #000;
+  color: transparent;
+  font-weight: 700;
+  font-size: 1rem;  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(50% at center 0);
+  text-align: center;
+}
+.head h2{
+  color: #fff;
+  font-size: 4.5em;
+  padding: 30px 0;  
+}
+.ans,.ques{
+  color: #666;
+  position: absolute;
+  right: 0px; left: 0px;
+  top: 50%;
+  bottom: 5%;
+  page-break-after: 20px;
+  text-align: center;
+  overflow-y: auto ;
+}
+.desc{
+  filter: drop-shadow(10px 10px 5px black);
+  color: #000;
+  width: 50%;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  border-radius: 40px;
+}
+
+.flip-card-inner:hover {
+  transform: scale(1.1);
+}
